@@ -16,9 +16,9 @@ class WelcomeConfig(modName: String, path: String, fileName: String) : TomlConfi
 	override fun generateTomlMap(): MutableMap<String, Any> {
 		val configMap: MutableMap<String, Any> = HashMap()
 
-		configMap["global_join_message"] = "<italic><gray>%player_name% has joined</gray></italic>"
-		configMap["global_leave_message"] = "<italic><gray>%player_name% left the game</gray></italic>"
-		configMap["welcome_message"] = "<yellow>Welcome, %player_name%!</yellow>"
+		configMap["global_join_message"] = "<italic><gray>%player_name% has joined!</gray></italic>"
+		configMap["global_leave_message"] = "<italic><gray>%player_name% left the game!</gray></italic>"
+		configMap["welcome_message"] = "<white>Welcome, <italic><bold>%player_name%!</bold></italic></white>"
 		configMap["send_welcome"] = true
 
 		return configMap

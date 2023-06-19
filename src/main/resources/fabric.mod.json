@@ -19,12 +19,6 @@
 
   "environment": "*",
   "entrypoints": {
-    "preLaunch": [
-      {
-        "adapter": "kotlin",
-        "value": "com.lilydev.welcome.WelcomePreLaunch"
-      }
-    ],
     "server": [
       {
         "adapter": "kotlin",

@@ -63,10 +63,6 @@ dependencies {
 
 	// Fabric Permissions API
 	include(modImplementation("me.lucko:fabric-permissions-api:${project.fabric_permissions_api_version}"))
-
-	// Mixin Extras
-	implementation("com.github.LlamaLad7:MixinExtras:${project.mixin_extras_version}")
-	annotationProcessor("com.github.LlamaLad7:MixinExtras:${project.mixin_extras_version}")
 }
 
 processResources {
