@@ -1,12 +1,15 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.lilydev.template.mixin",
+  "package": "com.lilydev.welcome.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
   "client": [
-    "TemplateMixin"
+  ],
+  "server": [
+    "JoinMessageMixin",
+    "DisconnectMessageMixin"
   ],
   "injectors": {
     "defaultRequire": 1

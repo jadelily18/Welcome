@@ -10,7 +10,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 archivesBaseName = project.archives_base_name
-version = "${project.mod_version}+${project.minecraft_version}"
+version = "${project.minecraft_version}+${project.mod_version}"
 group = project.maven_group
 
 repositories {
@@ -19,6 +19,29 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+
+	// For LilyLib
+	maven {
+		name "Lilydev"
+		url "https://maven.lilydev.com/snapshots"
+	}
+
+	// For Placeholder API
+	maven {
+		name "Nucleoid"
+		url "https://maven.nucleoid.xyz/"
+	}
+
+	// For Fabric Permissions API
+	maven {
+		name "Sonatype"
+		url "https://oss.sonatype.org/content/repositories/snapshots"
+	}
+
+	maven {
+		name "JitPack"
+		url "https://jitpack.io"
+	}
 
 }
 
@@ -31,7 +54,19 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.flk_version}"
 
-	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
+	// LilyLib
+	modApi("com.lilydev:LilyLib:${project.lilylib_version}")
+	implementation("com.moandjiezana.toml:toml4j:${project.toml4j_version}")
+
+	// Placeholder API
+	include(modImplementation("eu.pb4:placeholder-api:${project.placeholder_api_version}"))
+
+	// Fabric Permissions API
+	include(modImplementation("me.lucko:fabric-permissions-api:${project.fabric_permissions_api_version}"))
+
+	// Mixin Extras
+	implementation("com.github.LlamaLad7:MixinExtras:${project.mixin_extras_version}")
+	annotationProcessor("com.github.LlamaLad7:MixinExtras:${project.mixin_extras_version}")
 }
 
 processResources {

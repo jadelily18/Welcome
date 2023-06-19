@@ -1,51 +1,46 @@
 {
   "schemaVersion": 1,
-  "id": "template",
+  "id": "welcome",
   "version": "${version}",
 
-  "name": "Template Mod",
-  "description": "This is a template mod description!",
+  "name": "Welcome",
+  "description": "Fabric server mod that creates highly-configurable welcome messages!",
   "authors": [
     "jadelily18"
   ],
   "contact": {
     "homepage": "https://lilydev.com/",
-    "issues": "https://github.com/Lilydev-by-jade/fabric-template-kotlin/issues",
-    "sources": "https://github.com/Lilydev-by-jade/fabric-template-kotlin"
+    "issues": "https://github.com/Lilydev-by-jade/Welcome/issues",
+    "sources": "https://github.com/Lilydev-by-jade/Welcome"
   },
 
-  "license": "LGPL-3.0",
-  "icon": "assets/template/icon.png",
+  "license": "MPL-2.0",
+  "icon": "assets/welcome/icon.png",
 
   "environment": "*",
   "entrypoints": {
-    "main": [
+    "preLaunch": [
       {
         "adapter": "kotlin",
-        "value": "com.lilydev.template.Template"
+        "value": "com.lilydev.welcome.WelcomePreLaunch"
+      }
+    ],
+    "server": [
+      {
+        "adapter": "kotlin",
+        "value": "com.lilydev.welcome.WelcomeServer"
       }
     ]
   },
   "mixins": [
-    "template.mixins.json"
+    "welcome.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.14.9",
     "fabric-api": "*",
-    "minecraft": "~1.19",
+    "minecraft": "~1.20",
     "java": ">=17",
     "fabric-language-kotlin": "*"
-  },
-  "suggests": {
-    "another-mod": "modmenu"
-  },
-  "custom": {
-    "modmenu": {
-      "links": {
-        "modmenu.discord": "https://discord.gg/TZAt4PA5av",
-        "modmenu.kofi": "https://ko-fi.com/jadelily"
-      }
-    }
   }
 }
